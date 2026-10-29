@@ -1,9 +1,9 @@
 # MENDR
-OS-Style Machine Task Manager &amp; Real-Time Health Monitor — Team VYPRX hackathon project.
+OS-Style Machine Task Manager &amp; Real-Time Health Monitor — Team VYPERX hackathon project.
 
 # MENDR — Machine Health Monitoring System
 
-**Team:** VYPRX  
+**Team:** VYPERX  
 **Track:** Open Innovation
 
 ## Problem Statement
