@@ -1,50 +1,97 @@
 # MENDR
 OS-Style Machine Task Manager &amp; Real-Time Health Monitor — Team VYPRX hackathon project.
-# MENDR — Machine Health Intelligence
+
+# MENDR — Machine Health Monitoring System
 
 **Team:** VYPRX  
-**Track:** Open Innovation  
-**Project status:** Concept / proposed design
+**Track:** Open Innovation
 
-## Problem
-Industrial equipment can operate with limited visibility into power draw, load, temperature, and vibration. This can delay intervention, contribute to avoidable downtime, and make maintenance less responsive to actual operating conditions.
+## Problem Statement
 
-## Proposed solution
-MENDR is a proposed OS-style machine task manager and real-time health-monitoring dashboard. It would collect machine readings, compare them with asset-specific limits, show normal/elevated/critical states, and guide operators through a maintenance response workflow.
+Industrial machines can develop faults due to abnormal temperature,
+vibration, or power usage. Without continuous monitoring, these
+issues may go unnoticed and lead to unexpected downtime or
+unnecessary maintenance.
 
-## Proposed architecture
-1. **Data input:** machine sensors or a PLC / IoT gateway.
-2. **Data transfer:** MQTT or HTTP to a backend service.
-3. **Rule engine:** compare readings with configurable, asset-specific thresholds and log events.
-4. **Dashboard:** display readings, status, and warnings.
-5. **Response workflow:** operator reviews the warning and creates or confirms a maintenance work order.
+## Proposed Solution
 
-## Proposed technology stack
-- Dashboard: React
-- Backend/API and threshold logic: Python with FastAPI
-- Storage: SQLite for an early demonstration; PostgreSQL if a more durable deployment is needed
-- Device messaging: MQTT or HTTP
+MENDR is a machine health monitoring concept designed to help
+operators observe machine parameters, identify abnormal readings,
+and make better-informed maintenance decisions.
 
-These are proposed choices, not claims that the system has already been implemented. The team should finalize the stack based on its skills and available hardware.
+## Current Prototype
 
-## Feasibility and validation plan
-- Start with simulated readings or a controlled test data source.
-- Test normal, elevated, and critical conditions against known thresholds.
-- Verify event logging and the operator work-order flow.
-- Connect real equipment only after safe testing and access approval.
-- Treat predictive maintenance as future work until sufficient historical data is available and the model has been validated.
+The current prototype is built using Python and Flask. It provides
+a dashboard displaying sample machine information and an API that
+returns simulated telemetry.
 
-## Privacy and security
-- Authenticate devices and users.
-- Use encrypted communication where supported.
-- Restrict access by role and maintain audit logs.
-- Keep sensitive industrial telemetry out of public demo data.
-- Publish only synthetic/sample readings unless the data owner explicitly approves disclosure.
+Current features:
+- Displays multiple machines and their readings.
+- Simulates changing temperature and vibration values.
+- Provides a telemetry API at `/api/telemetry`.
+- Demonstrates the concept of monitoring machine conditions.
 
-## Current status and limitations
-This repository README describes the concept and proposed implementation plan. The presentation's machine readings are illustrative. Live sensor integration, automated alerts, and work-order automation should not be represented as completed unless and until they are implemented and tested.
+**Important:** The readings are simulated. The current prototype
+does not connect to physical sensors or industrial equipment.
+Machine status and health values are illustrative and do not
+automatically recalculate from every telemetry update.
+
+## Proposed Future Improvements
+
+- Calculate machine status using configurable thresholds.
+- Recalculate health indicators from machine readings.
+- Add maintenance alerts and work-order management.
+- Store historical readings for trend analysis.
+- Explore database integration and communication with real
+  sensors or industrial gateways.
+- Evaluate predictive maintenance after collecting and validating
+  sufficient historical data.
+
+## Technology Stack
+
+### Currently implemented
+- Python
+- Flask
+- HTML dashboard
+- Simulated telemetry
+
+### Potential future technologies
+- React for a richer dashboard.
+- FastAPI or an equivalent backend API.
+- SQLite or PostgreSQL for historical data.
+- MQTT or HTTP for device communication.
+
+These future technologies are proposals, not implemented features.
+
+## Run Locally
+
+1. Install Python 3.
+2. Open a terminal in the project folder.
+3. Install the dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Start the application:
+
+   ```bash
+   python app.py
+   ```
+
+5. Open this address in your browser:
+
+   http://127.0.0.1:5000
+
+## Limitations
+
+This is an early-stage concept prototype using simulated data.
+Real sensor integration, validated predictive maintenance,
+automated alerts, and automated work orders are not yet
+implemented.
 
 ## Team
+
 - Dhruv Yadav
 - Aasheesh Ayushman Panda
 - Disha Tiwari
