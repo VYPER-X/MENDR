@@ -1,5 +1,5 @@
 # MENDR — Machine Task Manager & Health Monitor
-**Team VYPRX | Open Innovation Track**
+**Team VYPERX | Open Innovation Track**
 
 MENDR is an OS-style industrial task manager and real-time machine health monitor designed to replace traditional calendar maintenance with parameter-driven, usage-based intelligence.
 
